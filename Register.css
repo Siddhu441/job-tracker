@@ -1,0 +1,134 @@
+:root {
+    --primary-color: #10b981;
+    --primary-hover: #059669;
+    --bg-color: #f9fafb;
+    --form-bg: #ffffff;
+    --text-color: #111827;
+    --label-color: #4b5563;
+    --error-color: #dc2626;
+    --link-color: #10b981;
+    --link-hover: #059669;
+  }
+  
+  body.dark-mode {
+    --bg-color: #1f2937;
+    --form-bg: #111827;
+    --text-color: #f3f4f6;
+    --label-color: #9ca3af;
+    --error-color: #f87171;
+    --link-color: #34d399;
+    --link-hover: #10b981;
+  }
+  
+  .min-h-screen {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 2rem;
+  }
+  
+  /* Container */
+  .register-container {
+    max-width: 420px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background-color: var(--form-bg);
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Header */
+  .register-container h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Form */
+  .register-form label {
+    display: block;
+    font-weight: 500;
+    color: var(--label-color);
+    margin-bottom: 0.25rem;
+  }
+  
+  .register-form input {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    margin-top: 0.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid #d1d5db;
+    font-size: 1rem;
+    background-color: #f9fafb;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .register-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+  }
+  
+  /* Input Wrapper */
+  .input-wrapper {
+    position: relative;
+  }
+  
+  .input-wrapper button {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 0.85rem;
+    color: #6b7280;
+    cursor: pointer;
+  }
+  
+  /* Submit button */
+  .register-form button[type="submit"] {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 1rem;
+  }
+  
+  .register-form button[type="submit"]:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+  }
+  
+  /* Error message */
+  .error-message {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--error-color);
+  }
+  
+  /* Login prompt */
+  .login-prompt {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--label-color);
+  }
+  
+  .login-prompt a {
+    color: var(--link-color);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .login-prompt a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+  }
