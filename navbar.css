@@ -1,0 +1,184 @@
+/* General Reset and Navbar Styling */
+.navbar {
+  background: #0a0a1f; /* Deep, near-black with blue undertone */
+  padding: 1.2rem 2rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Strong shadow for depth */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Inter', sans-serif; /* Clean, modern font */
+  backdrop-filter: blur(12px); /* Glassmorphism effect */
+  -webkit-backdrop-filter: blur(12px); /* For Safari */
+}
+
+/* Navbar Container */
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Styling */
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff; /* Pure white for logo */
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.logo::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ffffff; /* White underline */
+  transition: width 0.3s ease;
+}
+
+.logo:hover::after {
+  width: 100%; /* Underline effect on hover */
+}
+
+.logo:hover {
+  color: #e0e0e0; /* Slightly muted white on hover */
+}
+
+/* Menu Toggle Button (Hamburger) */
+.menu-toggle {
+  display: none; /* Hidden by default, shown on mobile */
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #ffffff; /* White hamburger */
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: rotate(90deg); /* Rotate on hover */
+  color: #e0e0e0; /* Muted white on hover */
+}
+
+/* Nav Links Container */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem; /* Spacious layout */
+}
+
+.nav-links a {
+  color: #ffffff; /* Pure white for links */
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  position: relative;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.08); /* Subtle glassmorphism */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.2); /* White glow on hover */
+  color: #e0e0e0; /* Slightly muted white */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3); /* White glowing shadow */
+}
+
+/* Sign In Button */
+.nav-links .btn {
+  background: linear-gradient(45deg, #ffffff, #e0e0e0); /* White to light gray gradient */
+  color: #0a0a1f; /* Dark text for contrast */
+  padding: 0.8rem 2rem;
+  border-radius: 50px; /* Pill shape */
+  font-weight: 700;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.nav-links .btn:hover {
+  background: linear-gradient(45deg, #e0e0e0, #ffffff); /* Reverse gradient */
+  transform: translateY(-3px); /* Stronger lift */
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.3); /* Brighter white glow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Show hamburger on mobile */
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #0a0a1f; /* Same deep dark background */
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    transform: translateY(-100%); /* Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(12px); /* Glassmorphism for mobile */
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Subtle white border */
+  }
+
+  .nav-links.active {
+    transform: translateY(0); /* Slide in */
+    opacity: 1;
+    visibility: visible;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-links a {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .nav-links .btn {
+    width: 80%;
+    text-align: center;
+    padding: 1rem;
+  }
+}
+
+/* Animation for Links */
+.nav-links a {
+  animation: slideIn 0.5s ease forwards;
+  animation-delay: calc(var(--index) * 0.1s); /* Staggered animation */
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered animation indices */
+.nav-links a:nth-child(1) { --index: 1; }
+.nav-links a:nth-child(2) { --index: 2; }
+.nav-links a:nth-child(3) { --index: 3; }
+.nav-links a:nth-child(4) { --index: 4; }
+.nav-links a:nth-child(5) { --index: 5; }
+.nav-links a:nth-child(6) { --index: 6; }
+.nav-links a:nth-child(7) { --index: 7; }
